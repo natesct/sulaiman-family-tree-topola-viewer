@@ -1,10 +1,10 @@
-import {Buffer} from 'buffer';
-import {strFromU8, unzip, Unzipped} from 'fflate';
-import {IndiInfo, JsonGedcomData} from 'topola';
-import {analyticsEvent} from '../util/analytics';
-import {TopolaError} from '../util/error';
-import {convertGedcom, getSoftware, TopolaData} from '../util/gedcom_util';
-import {DataSource, DataSourceEnum, SourceSelection} from './data_source';
+import { Buffer } from 'buffer';
+import { strFromU8, unzip, Unzipped } from 'fflate';
+import { IndiInfo, JsonGedcomData } from 'topola';
+import { analyticsEvent } from '../util/analytics';
+import { TopolaError } from '../util/error';
+import { convertGedcom, getSoftware, TopolaData } from '../util/gedcom_util';
+import { DataSource, DataSourceEnum, SourceSelection } from './data_source';
 
 /**
  * Returns a valid IndiInfo object, either with the given indi and generation
@@ -20,7 +20,7 @@ export function getSelection(
     selection && data.indis.some((i) => i.id === selection.id)
       ? selection.id
       : data.indis[0].id;
-  return {id, generation: selection?.generation || 0};
+  return { id, generation: selection?.generation || 0 };
 }
 
 function prepareData(
@@ -40,7 +40,7 @@ function prepareData(
 
 async function loadGedzip(
   blob: Blob,
-): Promise<{gedcom: string; images: Map<string, string>}> {
+): Promise<{ gedcom: string; images: Map<string, string> }> {
   const buffer = Buffer.from(await blob.arrayBuffer());
   const unzipped: Unzipped = await new Promise((resolve, reject) => {
     unzip(buffer, (err, result) => {
@@ -63,23 +63,28 @@ async function loadGedzip(
       }
     } else {
       // Save image for later.
-      images.set(fileName, URL.createObjectURL(new Blob([unzipped[fileName]])));
+      images.set(
+        fileName,
+        URL.createObjectURL(new Blob([unzipped[fileName].buffer as ArrayBuffer]))
+      );
+      //       images.set(fileName, URL.createObjectURL(new Blob([unzipped[fileName]])));
+
     }
   }
   if (!gedcom) {
     throw new Error('GEDCOM file not found in zip archive.');
   }
-  return {gedcom, images};
+  return { gedcom, images };
 }
 
 export async function loadFile(
   blob: Blob,
-): Promise<{gedcom: string; images: Map<string, string>}> {
+): Promise<{ gedcom: string; images: Map<string, string> }> {
   const fileHeader = await blob.slice(0, 2).text();
   if (fileHeader === 'PK') {
     return loadGedzip(blob);
   }
-  return {gedcom: await blob.text(), images: new Map()};
+  return { gedcom: await blob.text(), images: new Map() };
 }
 
 /** Fetches data from the given URL. Uses cors-anywhere if handleCors is true. */
@@ -116,7 +121,7 @@ export async function loadFromUrl(
     throw new Error(response.statusText);
   }
 
-  const {gedcom, images} = await loadFile(await response.blob());
+  const { gedcom, images } = await loadFile(await response.blob());
   return prepareData(gedcom, url, images);
 }
 
@@ -205,7 +210,7 @@ export class GedcomUrlDataSource implements DataSource<UrlSourceSpec> {
     try {
       const data = await loadFromUrl(source.spec.url, source.spec.handleCors);
       const software = getSoftware(data.gedcom.head);
-      analyticsEvent('upload_file_loaded', {event_label: software});
+      analyticsEvent('upload_file_loaded', { event_label: software });
       return data;
     } catch (error) {
       analyticsEvent('url_file_error');
