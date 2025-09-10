@@ -5,6 +5,26 @@
     <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-32GXR2WF6S"></script>-->
 
     <script>
+      (function () {
+        // Don't ask for password in local dev
+        if (
+          location.hostname === 'localhost' ||
+          location.hostname === '127.0.0.1'
+        ) {
+          return;
+        }
+
+        var password = 'sulaiman1777'; // change this
+        var userInput = prompt(
+          'Enter password to view the Sulaiman Family Tree:',
+        );
+        if (userInput !== password) {
+          document.body.innerHTML = '<h2>Access denied</h2>';
+        }
+      })();
+    </script>
+
+    <script>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
         dataLayer.push(arguments);
