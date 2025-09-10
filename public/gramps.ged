@@ -3,9 +3,9 @@
 2 VERS 6.0.4
 2 NAME Gramps
 1 DATE 10 SEP 2025
-2 TIME 12:59:01
+2 TIME 13:03:41
 1 SUBM @SUBM@
-1 FILE /app/cache/export/e4ca5a2d-baeb-4fd7-b50a-871497058355.ged
+1 FILE /app/cache/export/130813ac-4426-4108-bcd8-35fc2d310ae3.ged
 1 COPR Copyright (c) 2025 .
 1 GEDC
 2 VERS 5.5.1
@@ -767,13 +767,15 @@
 2 GIVN Koelsum
 2 SURN Slamang
 1 SEX F
+1 BIRT
+2 DATE 1935
 1 FAMC @F0024@
 2 PEDI birth
 1 FAMS @F0033@
 1 FAMS @F0034@
 1 CHAN
-2 DATE 8 SEP 2025
-3 TIME 14:42:43
+2 DATE 10 SEP 2025
+3 TIME 13:03:38
 0 @I0064@ INDI
 1 NAME Rashaad /Slamang/
 2 TYPE birth
