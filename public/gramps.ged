@@ -3,9 +3,9 @@
 2 VERS 6.0.4
 2 NAME Gramps
 1 DATE 10 SEP 2025
-2 TIME 10:04:02
+2 TIME 10:21:45
 1 SUBM @SUBM@
-1 FILE /app/cache/export/e0124cb3-a356-41af-8be8-4052f8448069.ged
+1 FILE /app/cache/export/989a8b72-31cd-408f-a07d-1b16fddafd15.ged
 1 COPR Copyright (c) 2025 .
 1 GEDC
 2 VERS 5.5.1
@@ -79,12 +79,16 @@
 2 SURN Slamang
 2 NPFX Imam
 1 SEX M
+1 BIRT
+2 DATE 1865
+1 DEAT
+2 DATE 1928
 1 FAMC @F0001@
 2 PEDI birth
 1 FAMS @F0009@
 1 CHAN
-2 DATE 7 SEP 2025
-3 TIME 09:26:03
+2 DATE 10 SEP 2025
+3 TIME 10:21:07
 0 @I0005@ INDI
 1 NAME Kareema /Slamang/
 2 TYPE birth
