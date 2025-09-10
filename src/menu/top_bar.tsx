@@ -200,7 +200,7 @@ export function TopBar(props: Props) {
   function title() {
     return (
       <Menu.Item>
-        <b>Topola Genealogy</b>
+        <b>Sh. Sayyid. Sulaiman Genealogy</b>
       </Menu.Item>
     );
   }
@@ -313,7 +313,8 @@ export function TopBar(props: Props) {
             </Dropdown.Item>
           </Dropdown.Menu>
         </Dropdown>
-        {props.standalone ? <Link to="/">{title()}</Link> : title()}
+
+        {title()}
       </>
     );
   }
@@ -321,7 +322,7 @@ export function TopBar(props: Props) {
   function desktopMenus() {
     return (
       <>
-        {props.standalone ? <Link to="/">{title()}</Link> : null}
+        {title()}
         {fileMenus(ScreenSize.LARGE)}
         {chartMenus(ScreenSize.LARGE)}
         {/*         <Menu.Menu position="right">
