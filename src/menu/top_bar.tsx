@@ -1,14 +1,14 @@
 import queryString from 'query-string';
-import {FormattedMessage} from 'react-intl';
-import {Link, useLocation, useNavigate} from 'react-router';
-import {Dropdown, Icon, Menu} from 'semantic-ui-react';
-import {IndiInfo, JsonGedcomData} from 'topola';
-import {Media} from '../util/media';
-import {MenuType} from './menu_item';
-import {SearchBar} from './search';
-import {UploadMenu} from './upload_menu';
-import {UrlMenu} from './url_menu';
-import {WikiTreeLoginMenu, WikiTreeMenu} from './wikitree_menu';
+import { FormattedMessage } from 'react-intl';
+import { Link, useLocation, useNavigate } from 'react-router';
+import { Dropdown, Icon, Menu } from 'semantic-ui-react';
+import { IndiInfo, JsonGedcomData } from 'topola';
+import { Media } from '../util/media';
+import { MenuType } from './menu_item';
+import { SearchBar } from './search';
+import { UploadMenu } from './upload_menu';
+import { UrlMenu } from './url_menu';
+import { WikiTreeLoginMenu, WikiTreeMenu } from './wikitree_menu';
 
 enum ScreenSize {
   LARGE,
@@ -92,6 +92,8 @@ export function TopBar(props: Props) {
       case ScreenSize.LARGE:
         return (
           <>
+
+            {/* 
             <Menu.Item
               onClick={props.eventHandlers.onPrint}
               disabled={!props.allowPrintAndDownload}
@@ -100,6 +102,7 @@ export function TopBar(props: Props) {
               <FormattedMessage id="menu.print" defaultMessage="Print" />
             </Menu.Item>
 
+           
             <Dropdown
               trigger={
                 <div>
@@ -133,7 +136,7 @@ export function TopBar(props: Props) {
                   />
                 </Dropdown.Item>
               </Dropdown.Menu>
-            </Dropdown>
+            </Dropdown> */}
 
             <Dropdown
               trigger={

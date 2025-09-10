@@ -25,6 +25,14 @@
     </script>
 
     <script>
+      // Disable right-click
+      document.addEventListener('contextmenu', function (e) {
+        e.preventDefault();
+        alert('Right click disabled on this site.');
+      });
+    </script>
+
+    <script>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
         dataLayer.push(arguments);
