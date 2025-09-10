@@ -164,7 +164,7 @@ export function TopBar(props: Props) {
   function title() {
     return (
       <Menu.Item>
-        <b>Shaykh. Sayyid. Sulaiman van Arabia - Patrilineal Genealogy</b>
+        <b>S.S.S Genealogy</b>
       </Menu.Item>
     );
   }

@@ -6,7 +6,6 @@
 
     <script>
       (function () {
-        // Don't ask for password in local dev
         if (
           location.hostname === 'localhost' ||
           location.hostname === '127.0.0.1'
@@ -15,10 +14,21 @@
         }
 
         var password = 'sulaiman1777'; // change this
+        var key = 'sulaiman_family_tree_access';
+        var expectedHash = btoa(password); // very weak obfuscation, not secure
+
+        // If already validated and matches expected hash
+        if (localStorage.getItem(key) === expectedHash) {
+          return;
+        }
+
         var userInput = prompt(
           'Enter password to view the Sulaiman Family Tree:',
         );
-        if (userInput !== password) {
+        if (userInput === password) {
+          // Save encoded password so we can check it next time
+          localStorage.setItem(key, expectedHash);
+        } else {
           document.body.innerHTML = '<h2>Access denied</h2>';
         }
       })();
@@ -47,7 +57,7 @@
       content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no"
     />
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
-    <title>Shaykh Sulaiman Family Tree Viewer</title>
+    <title>SSS Patrilineal Family Tree Viewer</title>
   </head>
   <body>
     <noscript> You need to enable JavaScript to run this app. </noscript>
