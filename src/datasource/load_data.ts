@@ -14,8 +14,6 @@ export function getSelection(
   data: JsonGedcomData,
   selection?: IndiInfo,
 ): IndiInfo {
-  // If ID is not given or it doesn't exist in the data, use the first ID in
-  // the data.
   const id =
     selection && data.indis.some((i) => i.id === selection.id)
       ? selection.id
@@ -62,13 +60,10 @@ async function loadGedzip(
         gedcom = strFromU8(unzipped[fileName]);
       }
     } else {
-      // Save image for later.
       images.set(
         fileName,
         URL.createObjectURL(new Blob([unzipped[fileName].buffer as ArrayBuffer]))
       );
-      //       images.set(fileName, URL.createObjectURL(new Blob([unzipped[fileName]])));
-
     }
   }
   if (!gedcom) {
@@ -93,9 +88,11 @@ export async function loadFromUrl(
   handleCors: boolean,
 ): Promise<TopolaData> {
   try {
-    const cachedData = sessionStorage.getItem(url);
-    if (cachedData) {
-      return JSON.parse(cachedData);
+    if (!import.meta.env.DEV) {
+      const cachedData = sessionStorage.getItem(url);
+      if (cachedData) {
+        return JSON.parse(cachedData);
+      }
     }
   } catch (e) {
     console.warn('Failed to load data from session storage: ' + e);
@@ -132,9 +129,11 @@ export async function loadGedcom(
   images?: Map<string, string>,
 ): Promise<TopolaData> {
   try {
-    const cachedData = sessionStorage.getItem(hash);
-    if (cachedData) {
-      return JSON.parse(cachedData);
+    if (!import.meta.env.DEV) {
+      const cachedData = sessionStorage.getItem(hash);
+      if (cachedData) {
+        return JSON.parse(cachedData);
+      }
     }
   } catch (e) {
     console.warn('Failed to load data from session storage: ' + e);
@@ -158,7 +157,6 @@ export interface UploadSourceSpec {
 
 /** Files opened from the local computer. */
 export class UploadedDataSource implements DataSource<UploadSourceSpec> {
-  // isNewData(args: Arguments, state: State): boolean {
   isNewData(
     newSource: SourceSelection<UploadSourceSpec>,
     oldSource: SourceSelection<UploadSourceSpec>,

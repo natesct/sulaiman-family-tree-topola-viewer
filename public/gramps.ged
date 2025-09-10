@@ -3,9 +3,9 @@
 2 VERS 6.0.4
 2 NAME Gramps
 1 DATE 10 SEP 2025
-2 TIME 10:36:34
+2 TIME 10:43:23
 1 SUBM @SUBM@
-1 FILE /app/cache/export/e4e7e315-f96f-4b83-b0d8-789c8f99c71d.ged
+1 FILE /app/cache/export/deef94c0-1c16-499a-b372-2ab1dd713bd2.ged
 1 COPR Copyright (c) 2025 .
 1 GEDC
 2 VERS 5.5.1
@@ -677,12 +677,16 @@
 2 GIVN Rukeah
 2 SURN Slamang
 1 SEX F
+1 BIRT
+2 DATE 1895
+1 DEAT
+2 DATE 1937
 1 FAMC @F0009@
 2 PEDI birth
 1 FAMS @F0030@
 1 CHAN
-2 DATE 9 SEP 2025
-3 TIME 13:28:25
+2 DATE 10 SEP 2025
+3 TIME 10:43:07
 0 @I0058@ INDI
 1 NAME Gadija /Slamang/
 2 TYPE birth

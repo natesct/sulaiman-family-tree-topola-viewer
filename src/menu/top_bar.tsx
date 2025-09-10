@@ -1,6 +1,6 @@
 import queryString from 'query-string';
 import { FormattedMessage } from 'react-intl';
-import { Link, useLocation, useNavigate } from 'react-router';
+import { useLocation, useNavigate } from 'react-router';
 import { Dropdown, Icon, Menu } from 'semantic-ui-react';
 import { IndiInfo, JsonGedcomData } from 'topola';
 import { Media } from '../util/media';
@@ -24,16 +24,12 @@ interface EventHandlers {
 }
 
 interface Props {
-  /** True if the application is currently showing a chart. */
   showingChart: boolean;
-  /** Data used for the search index. */
   data?: JsonGedcomData;
   standalone: boolean;
-  /** Whether to show the "All relatives" chart type in the menu. */
   allowAllRelativesChart: boolean;
   allowPrintAndDownload: boolean;
   eventHandlers: EventHandlers;
-  /** Whether to show additional WikiTree menus. */
   showWikiTreeMenus: boolean;
 }
 
@@ -58,33 +54,21 @@ export function TopBar(props: Props) {
       <>
         <Dropdown.Item onClick={() => changeView('hourglass')}>
           <Icon name="hourglass" />
-          <FormattedMessage
-            id="menu.hourglass"
-            defaultMessage="Hourglass chart"
-          />
+          <FormattedMessage id="menu.hourglass" defaultMessage="Hourglass chart" />
         </Dropdown.Item>
         {props.allowAllRelativesChart ? (
           <Dropdown.Item onClick={() => changeView('relatives')}>
             <Icon name="users" />
-            <FormattedMessage
-              id="menu.relatives"
-              defaultMessage="All relatives"
-            />
+            <FormattedMessage id="menu.relatives" defaultMessage="All relatives" />
           </Dropdown.Item>
         ) : null}
         <Dropdown.Item onClick={() => changeView('donatso')}>
           <Icon name="users" />
-          <FormattedMessage
-            id="menu.donatso"
-            defaultMessage="Donatso family chart"
-          />
+          <FormattedMessage id="menu.donatso" defaultMessage="Donatso family chart" />
         </Dropdown.Item>
         <Dropdown.Item onClick={() => changeView('fancy')}>
           <Icon name="users" />
-          <FormattedMessage
-            id="menu.fancy"
-            defaultMessage="Fancy tree (experimental)"
-          />
+          <FormattedMessage id="menu.fancy" defaultMessage="Fancy tree (experimental)" />
         </Dropdown.Item>
       </>
     );
@@ -92,8 +76,7 @@ export function TopBar(props: Props) {
       case ScreenSize.LARGE:
         return (
           <>
-
-            {/* 
+            {/*
             <Menu.Item
               onClick={props.eventHandlers.onPrint}
               disabled={!props.allowPrintAndDownload}
@@ -102,15 +85,11 @@ export function TopBar(props: Props) {
               <FormattedMessage id="menu.print" defaultMessage="Print" />
             </Menu.Item>
 
-           
             <Dropdown
               trigger={
                 <div>
                   <Icon name="download" />
-                  <FormattedMessage
-                    id="menu.download"
-                    defaultMessage="Download"
-                  />
+                  <FormattedMessage id="menu.download" defaultMessage="Download" />
                 </div>
               }
               className="item"
@@ -118,25 +97,17 @@ export function TopBar(props: Props) {
             >
               <Dropdown.Menu>
                 <Dropdown.Item onClick={props.eventHandlers.onDownloadPdf}>
-                  <FormattedMessage
-                    id="menu.pdf_file"
-                    defaultMessage="PDF file"
-                  />
+                  <FormattedMessage id="menu.pdf_file" defaultMessage="PDF file" />
                 </Dropdown.Item>
                 <Dropdown.Item onClick={props.eventHandlers.onDownloadPng}>
-                  <FormattedMessage
-                    id="menu.png_file"
-                    defaultMessage="PNG file"
-                  />
+                  <FormattedMessage id="menu.png_file" defaultMessage="PNG file" />
                 </Dropdown.Item>
                 <Dropdown.Item onClick={props.eventHandlers.onDownloadSvg}>
-                  <FormattedMessage
-                    id="menu.svg_file"
-                    defaultMessage="SVG file"
-                  />
+                  <FormattedMessage id="menu.svg_file" defaultMessage="SVG file" />
                 </Dropdown.Item>
               </Dropdown.Menu>
-            </Dropdown> */}
+            </Dropdown>
+            */}
 
             <Dropdown
               trigger={
@@ -160,6 +131,7 @@ export function TopBar(props: Props) {
       case ScreenSize.SMALL:
         return (
           <>
+            {/*
             <Dropdown.Item onClick={props.eventHandlers.onPrint}>
               <Icon name="print" />
               <FormattedMessage id="menu.print" defaultMessage="Print" />
@@ -169,27 +141,19 @@ export function TopBar(props: Props) {
 
             <Dropdown.Item onClick={props.eventHandlers.onDownloadPdf}>
               <Icon name="download" />
-              <FormattedMessage
-                id="menu.download_pdf"
-                defaultMessage="Download PDF"
-              />
+              <FormattedMessage id="menu.download_pdf" defaultMessage="Download PDF" />
             </Dropdown.Item>
             <Dropdown.Item onClick={props.eventHandlers.onDownloadPng}>
               <Icon name="download" />
-              <FormattedMessage
-                id="menu.download_png"
-                defaultMessage="Download PNG"
-              />
+              <FormattedMessage id="menu.download_png" defaultMessage="Download PNG" />
             </Dropdown.Item>
             <Dropdown.Item onClick={props.eventHandlers.onDownloadSvg}>
               <Icon name="download" />
-              <FormattedMessage
-                id="menu.download_svg"
-                defaultMessage="Download SVG"
-              />
+              <FormattedMessage id="menu.download_svg" defaultMessage="Download SVG" />
             </Dropdown.Item>
 
             <Dropdown.Divider />
+            */}
             {chartTypeItems}
             <Dropdown.Divider />
           </>
@@ -206,7 +170,6 @@ export function TopBar(props: Props) {
   }
 
   function fileMenus(screenSize: ScreenSize) {
-    // In standalone WikiTree mode, show only the "Select WikiTree ID" menu.
     if (!props.standalone && props.showWikiTreeMenus) {
       switch (screenSize) {
         case ScreenSize.LARGE:
@@ -221,15 +184,12 @@ export function TopBar(props: Props) {
       }
     }
 
-    // Don't show "open" menus in non-standalone mode.
     if (!props.standalone) {
       return null;
     }
 
     switch (screenSize) {
       case ScreenSize.LARGE:
-        // Show dropdown if chart is shown, otherwise show individual menu
-        // items.
         const menus = props.showingChart ? (
           <Dropdown
             trigger={
@@ -274,9 +234,7 @@ export function TopBar(props: Props) {
     return (
       <>
         <WikiTreeLoginMenu
-          menuType={
-            screenSize === ScreenSize.SMALL ? MenuType.Dropdown : MenuType.Menu
-          }
+          menuType={screenSize === ScreenSize.SMALL ? MenuType.Dropdown : MenuType.Menu}
           {...props}
         />
         {screenSize === ScreenSize.SMALL ? <Dropdown.Divider /> : null}
@@ -301,16 +259,15 @@ export function TopBar(props: Props) {
             {chartMenus(ScreenSize.SMALL)}
             {wikiTreeLoginMenu(ScreenSize.SMALL)}
 
+            {/*
             <Dropdown.Item
               href="https://github.com/PeWu/topola-viewer"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FormattedMessage
-                id="menu.github"
-                defaultMessage="GitHub project"
-              />
+              <FormattedMessage id="menu.github" defaultMessage="GitHub project" />
             </Dropdown.Item>
+            */}
           </Dropdown.Menu>
         </Dropdown>
 
@@ -325,20 +282,18 @@ export function TopBar(props: Props) {
         {title()}
         {fileMenus(ScreenSize.LARGE)}
         {chartMenus(ScreenSize.LARGE)}
-        {/*         <Menu.Menu position="right">
+        {/*
+        <Menu.Menu position="right">
           {wikiTreeLoginMenu(ScreenSize.LARGE)}
           <Menu.Item
             href="https://github.com/PeWu/topola-viewer"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FormattedMessage
-              id="menu.github"
-              defaultMessage="GitHub project"
-            />
+            <FormattedMessage id="menu.github" defaultMessage="GitHub project" />
           </Menu.Item>
-        </Menu.Menu> */}
-
+        </Menu.Menu>
+        */}
       </>
     );
   }
