@@ -324,7 +324,7 @@ export function TopBar(props: Props) {
         {props.standalone ? <Link to="/">{title()}</Link> : null}
         {fileMenus(ScreenSize.LARGE)}
         {chartMenus(ScreenSize.LARGE)}
-        <Menu.Menu position="right">
+        {/*         <Menu.Menu position="right">
           {wikiTreeLoginMenu(ScreenSize.LARGE)}
           <Menu.Item
             href="https://github.com/PeWu/topola-viewer"
@@ -336,7 +336,8 @@ export function TopBar(props: Props) {
               defaultMessage="GitHub project"
             />
           </Menu.Item>
-        </Menu.Menu>
+        </Menu.Menu> */}
+
       </>
     );
   }
