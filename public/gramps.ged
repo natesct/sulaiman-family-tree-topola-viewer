@@ -3,9 +3,9 @@
 2 VERS 6.0.4
 2 NAME Gramps
 1 DATE 13 SEP 2025
-2 TIME 06:01:44
+2 TIME 06:05:27
 1 SUBM @SUBM@
-1 FILE /app/cache/export/6df262a1-6067-497a-8abd-d2fdb17f82da.ged
+1 FILE /app/cache/export/7abaa649-d9e8-4041-99ec-8d24c9393f87.ged
 1 COPR Copyright (c) 2025 .
 1 GEDC
 2 VERS 5.5.1
@@ -15,9 +15,10 @@
 0 @SUBM@ SUBM
 1 NAME
 0 @I0000@ INDI
-1 NAME Sulaiman //
+1 NAME Sulaiman /bin Abdurahmaan/
 2 TYPE birth
 2 GIVN Sulaiman
+2 SURN bin Abdurahmaan
 2 NPFX Shaykh Sayid
 1 SEX M
 1 BIRT
@@ -28,8 +29,8 @@
 1 FAMS @F0022@
 1 OBJE @O0000@
 1 CHAN
-2 DATE 10 SEP 2025
-3 TIME 09:55:23
+2 DATE 13 SEP 2025
+3 TIME 06:05:22
 0 @I0001@ INDI
 1 NAME Abdullah //
 2 TYPE birth
