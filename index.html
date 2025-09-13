@@ -5,6 +5,13 @@
     <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-32GXR2WF6S"></script>-->
 
     <script>
+      // Clear cache on refresh or tab close
+      window.addEventListener('beforeunload', () => {
+        sessionStorage.clear();
+      });
+    </script>
+
+    <script>
       (function () {
         if (
           location.hostname === 'localhost' ||
