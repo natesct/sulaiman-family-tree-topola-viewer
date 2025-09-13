@@ -3,9 +3,9 @@
 2 VERS 6.0.4
 2 NAME Gramps
 1 DATE 13 SEP 2025
-2 TIME 05:47:12
+2 TIME 05:55:25
 1 SUBM @SUBM@
-1 FILE /app/cache/export/66a819b7-315e-4566-b474-ca4a37f53984.ged
+1 FILE /app/cache/export/c753e13e-fc44-4b4e-b2e3-2fd67556b311.ged
 1 COPR Copyright (c) 2025 .
 1 GEDC
 2 VERS 5.5.1
@@ -3097,6 +3097,222 @@
 1 CHAN
 2 DATE 13 SEP 2025
 3 TIME 05:47:06
+0 @I0257@ INDI
+1 NAME Mareldia /Slamang/
+2 TYPE birth
+2 GIVN Mareldia
+2 SURN Slamang
+1 SEX F
+1 FAMC @F0088@
+2 PEDI birth
+1 CHAN
+2 DATE 13 SEP 2025
+3 TIME 05:54:11
+0 @I0258@ INDI
+1 NAME Abdullah /Abrahams/
+2 TYPE birth
+2 GIVN Abdullah
+2 SURN Abrahams
+1 SEX M
+1 CHAN
+2 DATE 13 SEP 2025
+3 TIME 05:49:43
+0 @I0259@ INDI
+1 NAME Sagiba /Slamang/
+2 TYPE birth
+2 GIVN Sagiba
+2 SURN Slamang
+1 SEX F
+1 FAMC @F0088@
+2 PEDI birth
+1 CHAN
+2 DATE 13 SEP 2025
+3 TIME 05:54:32
+0 @I0260@ INDI
+1 NAME Abdool Razak /Ebrahim/
+2 TYPE birth
+2 GIVN Abdool Razak
+2 SURN Ebrahim
+1 SEX M
+1 CHAN
+2 DATE 13 SEP 2025
+3 TIME 05:50:09
+0 @I0261@ INDI
+1 NAME Abdurrazak /Slamang/
+2 TYPE birth
+2 GIVN Abdurrazak
+2 SURN Slamang
+1 SEX M
+1 FAMC @F0088@
+2 PEDI birth
+1 CHAN
+2 DATE 13 SEP 2025
+3 TIME 05:54:45
+0 @I0262@ INDI
+1 NAME Ardeal /Slamang/
+2 TYPE birth
+2 GIVN Ardeal
+2 SURN Slamang
+1 SEX M
+1 CHAN
+2 DATE 13 SEP 2025
+3 TIME 05:50:28
+0 @I0263@ INDI
+1 NAME Hassiem /Slamang/
+2 TYPE birth
+2 GIVN Hassiem
+2 SURN Slamang
+1 SEX M
+1 CHAN
+2 DATE 13 SEP 2025
+3 TIME 05:50:40
+0 @I0264@ INDI
+1 NAME Gabeba /Slamang/
+2 TYPE birth
+2 GIVN Gabeba
+2 SURN Slamang
+1 SEX F
+1 CHAN
+2 DATE 13 SEP 2025
+3 TIME 05:50:49
+0 @I0265@ INDI
+1 NAME Rashieda /Slamang/
+2 TYPE birth
+2 GIVN Rashieda
+2 SURN Slamang
+1 SEX F
+1 CHAN
+2 DATE 13 SEP 2025
+3 TIME 05:50:59
+0 @I0266@ INDI
+1 NAME Sogiba /Slamang/
+2 TYPE birth
+2 GIVN Sogiba
+2 SURN Slamang
+1 SEX F
+1 CHAN
+2 DATE 13 SEP 2025
+3 TIME 05:51:10
+0 @I0267@ INDI
+1 NAME Latiefa /Slamang/
+2 TYPE birth
+2 GIVN Latiefa
+2 SURN Slamang
+1 SEX F
+1 FAMC @F0088@
+2 PEDI birth
+1 CHAN
+2 DATE 13 SEP 2025
+3 TIME 05:55:02
+0 @I0268@ INDI
+1 NAME Sadan /Slamang/
+2 TYPE birth
+2 GIVN Sadan
+2 SURN Slamang
+1 SEX M
+1 FAMC @F0088@
+2 PEDI birth
+1 CHAN
+2 DATE 13 SEP 2025
+3 TIME 05:55:10
+0 @I0269@ INDI
+1 NAME Ayesha /Slamang/
+2 TYPE birth
+2 GIVN Ayesha
+2 SURN Slamang
+1 SEX F
+1 CHAN
+2 DATE 13 SEP 2025
+3 TIME 05:52:04
+0 @I0270@ INDI
+1 NAME Soraya /Slamang/
+2 TYPE birth
+2 GIVN Soraya
+2 SURN Slamang
+1 SEX F
+1 CHAN
+2 DATE 13 SEP 2025
+3 TIME 05:52:17
+0 @I0271@ INDI
+1 NAME Ismail /Slamang/
+2 TYPE birth
+2 GIVN Ismail
+2 SURN Slamang
+1 SEX M
+1 CHAN
+2 DATE 13 SEP 2025
+3 TIME 05:52:27
+0 @I0272@ INDI
+1 NAME Arshiq /Slamang/
+2 TYPE birth
+2 GIVN Arshiq
+2 SURN Slamang
+1 SEX M
+1 CHAN
+2 DATE 13 SEP 2025
+3 TIME 05:52:37
+0 @I0273@ INDI
+1 NAME Daiyaan /Slamang/
+2 TYPE birth
+2 GIVN Daiyaan
+2 SURN Slamang
+1 CHAN
+2 DATE 13 SEP 2025
+3 TIME 05:52:45
+0 @I0274@ INDI
+1 NAME Aqeel /Slamang/
+2 TYPE birth
+2 GIVN Aqeel
+2 SURN Slamang
+1 SEX M
+1 CHAN
+2 DATE 13 SEP 2025
+3 TIME 05:52:55
+0 @I0275@ INDI
+1 NAME Madeneyah /Slamang/
+2 TYPE birth
+2 GIVN Madeneyah
+2 SURN Slamang
+1 SEX F
+1 CHAN
+2 DATE 13 SEP 2025
+3 TIME 05:53:05
+0 @I0276@ INDI
+1 NAME Faizel /Slamang/
+2 TYPE birth
+2 GIVN Faizel
+2 SURN Slamang
+1 SEX M
+1 CHAN
+2 DATE 13 SEP 2025
+3 TIME 05:53:14
+0 @I0277@ INDI
+1 NAME Firhaan /Slamang/
+2 TYPE birth
+2 GIVN Firhaan
+2 SURN Slamang
+1 SEX M
+1 CHAN
+2 DATE 13 SEP 2025
+3 TIME 05:53:24
+0 @I0278@ INDI
+1 NAME Qaahir /Slamang/
+2 TYPE birth
+2 GIVN Qaahir
+2 SURN Slamang
+1 SEX M
+1 CHAN
+2 DATE 13 SEP 2025
+3 TIME 05:53:33
+0 @I0279@ INDI
+1 NAME Rezaa /Slamang/
+2 TYPE birth
+2 GIVN Rezaa
+2 SURN Slamang
+1 SEX M
+1 CHAN
+2 DATE 13 SEP 2025
+3 TIME 05:53:41
 0 @F0000@ FAM
 1 HUSB @I0000@
 1 WIFE @I0018@
@@ -3782,9 +3998,14 @@
 0 @F0088@ FAM
 1 HUSB @I0235@
 1 WIFE @I0253@
+1 CHIL @I0257@
+1 CHIL @I0259@
+1 CHIL @I0261@
+1 CHIL @I0267@
+1 CHIL @I0268@
 1 CHAN
 2 DATE 13 SEP 2025
-3 TIME 05:41:46
+3 TIME 05:55:11
 0 @F0089@ FAM
 1 HUSB @I0254@
 1 WIFE @I0236@
