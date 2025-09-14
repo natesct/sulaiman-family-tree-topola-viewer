@@ -37,6 +37,9 @@ export function TopBar(props: Props) {
   const navigate = useNavigate();
   const location = useLocation();
 
+  const isDev =
+    window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+
   function changeView(view: string) {
     const search = queryString.parse(location.search);
     if (search.view !== view) {
@@ -76,38 +79,40 @@ export function TopBar(props: Props) {
       case ScreenSize.LARGE:
         return (
           <>
-            {/*
-            <Menu.Item
-              onClick={props.eventHandlers.onPrint}
-              disabled={!props.allowPrintAndDownload}
-            >
-              <Icon name="print" />
-              <FormattedMessage id="menu.print" defaultMessage="Print" />
-            </Menu.Item>
+            {isDev && (
+              <>
+                <Menu.Item
+                  onClick={props.eventHandlers.onPrint}
+                  disabled={!props.allowPrintAndDownload}
+                >
+                  <Icon name="print" />
+                  <FormattedMessage id="menu.print" defaultMessage="Print" />
+                </Menu.Item>
 
-            <Dropdown
-              trigger={
-                <div>
-                  <Icon name="download" />
-                  <FormattedMessage id="menu.download" defaultMessage="Download" />
-                </div>
-              }
-              className="item"
-              disabled={!props.allowPrintAndDownload}
-            >
-              <Dropdown.Menu>
-                <Dropdown.Item onClick={props.eventHandlers.onDownloadPdf}>
-                  <FormattedMessage id="menu.pdf_file" defaultMessage="PDF file" />
-                </Dropdown.Item>
-                <Dropdown.Item onClick={props.eventHandlers.onDownloadPng}>
-                  <FormattedMessage id="menu.png_file" defaultMessage="PNG file" />
-                </Dropdown.Item>
-                <Dropdown.Item onClick={props.eventHandlers.onDownloadSvg}>
-                  <FormattedMessage id="menu.svg_file" defaultMessage="SVG file" />
-                </Dropdown.Item>
-              </Dropdown.Menu>
-            </Dropdown>
-            */}
+                <Dropdown
+                  trigger={
+                    <div>
+                      <Icon name="download" />
+                      <FormattedMessage id="menu.download" defaultMessage="Download" />
+                    </div>
+                  }
+                  className="item"
+                  disabled={!props.allowPrintAndDownload}
+                >
+                  <Dropdown.Menu>
+                    <Dropdown.Item onClick={props.eventHandlers.onDownloadPdf}>
+                      <FormattedMessage id="menu.pdf_file" defaultMessage="PDF file" />
+                    </Dropdown.Item>
+                    <Dropdown.Item onClick={props.eventHandlers.onDownloadPng}>
+                      <FormattedMessage id="menu.png_file" defaultMessage="PNG file" />
+                    </Dropdown.Item>
+                    <Dropdown.Item onClick={props.eventHandlers.onDownloadSvg}>
+                      <FormattedMessage id="menu.svg_file" defaultMessage="SVG file" />
+                    </Dropdown.Item>
+                  </Dropdown.Menu>
+                </Dropdown>
+              </>
+            )}
 
             <Dropdown
               trigger={
@@ -131,29 +136,31 @@ export function TopBar(props: Props) {
       case ScreenSize.SMALL:
         return (
           <>
-            {/*
-            <Dropdown.Item onClick={props.eventHandlers.onPrint}>
-              <Icon name="print" />
-              <FormattedMessage id="menu.print" defaultMessage="Print" />
-            </Dropdown.Item>
+            {isDev && (
+              <>
+                <Dropdown.Item onClick={props.eventHandlers.onPrint}>
+                  <Icon name="print" />
+                  <FormattedMessage id="menu.print" defaultMessage="Print" />
+                </Dropdown.Item>
 
-            <Dropdown.Divider />
+                <Dropdown.Divider />
 
-            <Dropdown.Item onClick={props.eventHandlers.onDownloadPdf}>
-              <Icon name="download" />
-              <FormattedMessage id="menu.download_pdf" defaultMessage="Download PDF" />
-            </Dropdown.Item>
-            <Dropdown.Item onClick={props.eventHandlers.onDownloadPng}>
-              <Icon name="download" />
-              <FormattedMessage id="menu.download_png" defaultMessage="Download PNG" />
-            </Dropdown.Item>
-            <Dropdown.Item onClick={props.eventHandlers.onDownloadSvg}>
-              <Icon name="download" />
-              <FormattedMessage id="menu.download_svg" defaultMessage="Download SVG" />
-            </Dropdown.Item>
+                <Dropdown.Item onClick={props.eventHandlers.onDownloadPdf}>
+                  <Icon name="download" />
+                  <FormattedMessage id="menu.download_pdf" defaultMessage="Download PDF" />
+                </Dropdown.Item>
+                <Dropdown.Item onClick={props.eventHandlers.onDownloadPng}>
+                  <Icon name="download" />
+                  <FormattedMessage id="menu.download_png" defaultMessage="Download PNG" />
+                </Dropdown.Item>
+                <Dropdown.Item onClick={props.eventHandlers.onDownloadSvg}>
+                  <Icon name="download" />
+                  <FormattedMessage id="menu.download_svg" defaultMessage="Download SVG" />
+                </Dropdown.Item>
 
-            <Dropdown.Divider />
-            */}
+                <Dropdown.Divider />
+              </>
+            )}
             {chartTypeItems}
             <Dropdown.Divider />
           </>
@@ -258,16 +265,6 @@ export function TopBar(props: Props) {
             {fileMenus(ScreenSize.SMALL)}
             {chartMenus(ScreenSize.SMALL)}
             {wikiTreeLoginMenu(ScreenSize.SMALL)}
-
-            {/*
-            <Dropdown.Item
-              href="https://github.com/PeWu/topola-viewer"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FormattedMessage id="menu.github" defaultMessage="GitHub project" />
-            </Dropdown.Item>
-            */}
           </Dropdown.Menu>
         </Dropdown>
 
@@ -282,18 +279,6 @@ export function TopBar(props: Props) {
         {title()}
         {fileMenus(ScreenSize.LARGE)}
         {chartMenus(ScreenSize.LARGE)}
-        {/*
-        <Menu.Menu position="right">
-          {wikiTreeLoginMenu(ScreenSize.LARGE)}
-          <Menu.Item
-            href="https://github.com/PeWu/topola-viewer"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FormattedMessage id="menu.github" defaultMessage="GitHub project" />
-          </Menu.Item>
-        </Menu.Menu>
-        */}
       </>
     );
   }
@@ -310,14 +295,7 @@ export function TopBar(props: Props) {
       >
         {desktopMenus()}
       </Menu>
-      <Menu
-        as={Media}
-        at="small"
-        attached="top"
-        inverted
-        color="blue"
-        size="large"
-      >
+      <Menu as={Media} at="small" attached="top" inverted color="blue" size="large">
         {mobileMenus()}
       </Menu>
     </>
